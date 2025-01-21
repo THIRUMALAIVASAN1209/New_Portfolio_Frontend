@@ -1,0 +1,11 @@
+.video-play,.video-img{
+  transition: 0.15s;
+}
+
+.video-play:hover{
+  transform: scale(1.05);
+}
+
+.video-img:hover{
+  transform: scale(1.05);
+}
