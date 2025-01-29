@@ -39,7 +39,7 @@ nav{
   position: fixed;
   margin-top: -10%;
   width: 100%;
-  padding-left: 30%;
+  padding-left: 20%;
   z-index: 1000;
 }
 
@@ -199,7 +199,10 @@ button:active{
 .services{
   background:linear-gradient(rgb(32, 2, 2),rgba(18, 1, 56, 0.54));
   padding-top: 5%;
+  
 }
+
+
 
 .scroll-buttons {
   display: flex;
@@ -279,24 +282,20 @@ button:active{
 
 .container {
   position: relative;
-  overflow: hidden; /* Ensures items stay within bounds */
+  overflow: hidden; 
 }
 
 .work-list {
   display: flex;
   gap: 40px;
   overflow-x: hidden; 
-  /* Prevents horizontal scrollbars */
   scroll-behavior: smooth;
-   /* Smooth scrolling animation */
 }
 
 .work {
   flex: 0 0 300px; 
-  /* Fixed width for each work item */
   height: 430px;
   position: relative;
-  /* background: #f0f0f0; */
   border: none;
   border-radius: 8px;
   
@@ -315,7 +314,6 @@ button:active{
   width: 100%;
   transform: translateY(-50%);
   z-index: 10;
-
 }
 
 .slider-button {
@@ -331,6 +329,93 @@ button:active{
 
 .slider-button:hover {
   background-color: #0056b3;
+}
+
+/* ----------Achievements---------- */
+
+.my-font-class {
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+}
+
+.achievements {
+  padding: 20px;
+  background-color: black; 
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.sub-title {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #f8f9fa;
+}
+
+.scroll-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.slider-button {
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+
+.achievements-list {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 16px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.achievements-item {
+  flex: 0 0 auto;
+  min-width: 250px;
+  max-width: 300px;
+  background-color: black;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievements-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.achievements-item img {
+  max-width: 95%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.achievements-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.achievements-item p {
+  font-size: 0.9rem;
+  color: #dcdcdc;
+  margin-bottom: 12px;
+}
+
+.achievements-item a {
+  text-decoration: underline;
+  font-size: 0.9rem;
 }
 
 
@@ -350,8 +435,9 @@ button:active{
 }
 
 .achievements{
-  margin-left: 5%;
-  margin-top: 100px;
+  padding-top: 5%;
+  padding-left: 5.2%;
+  scroll-behavior: smooth;
 }
 
 .contact{
@@ -365,12 +451,10 @@ button:active{
 
 .contact-left{
   flex-basis: 10%;
-  /* background-color: lightblue; */
 }
 
 .contact-right{
   flex-basis: 53%;
-  /* background-color: lightcoral; */
 }
 
 .contact-left p{
@@ -545,14 +629,78 @@ nav img {
   .contact{
     padding-left: 10%;
   }
+
+  /* ----services---- */
   
-  .services-list{
-    margin-left: 5%;
-  }
+    .services {
+      padding: 15px;
+    }
+  
+    .services-title {
+      font-size: 1.5rem;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+  
+    .scroll-buttons {
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+  
+    .slider-button {
+      padding: 6px 12px;
+      font-size: 0.9rem;
+    }
+  
+    .services-list {
+      gap: 12px;
+      padding: 8px;
+      display: flex;
+      overflow-x: auto; 
+      scroll-behavior: smooth;
+    }
+  
+    .services-item {
+      min-width: 200px; 
+      max-width: 80%;
+      padding: 12px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      flex-shrink: 0;
+    }
+  
+    .services-item img {
+      max-width: 150px;
+      margin: 0 auto 8px;
+      display: block;
+    }
+  
+    .services-item h3 {
+      font-size: 1rem;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+  
+    .services-item p {
+      font-size: 0.8rem;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+  
+    .services-item a {
+      font-size: 0.8rem;
+      display: block;
+      text-align: center;
+      text-decoration: underline;
+    }
+  
+
+  /* ----work----- */
 
   .work{
     margin-bottom: 20%;
-    margin-left: -2%;
   }
 
   footer p{
@@ -585,10 +733,6 @@ nav img {
     padding-left: 32%;
   }
 
-  .services h1{
-    margin-left: 20%;
-  }
-
   .services-list{
     transform: scale(0.9);
   }
@@ -603,6 +747,56 @@ nav img {
 
   .phone{
     margin-bottom: -35%;
+  }
+
+  /*-------- achievements ---------*/
+
+  .achievements {
+    padding: 15px;
+  }
+
+  .sub-title {
+    font-size: 1.5rem;
+  }
+
+  .scroll-buttons {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .slider-button {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  .achievements-list {
+    gap: 12px;
+    padding: 8px;
+  }
+
+  .achievements-item {
+    min-width: 90%; 
+    max-width: 80%;
+    padding: 12px;
+  }
+
+  .achievements-item img {
+    max-width: 110%;
+    margin-bottom: 8px;
+  }
+
+  .achievements-item h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .achievements-item p {
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+  }
+
+  .achievements-item a {
+    font-size: 0.8rem;
   }
 }
 

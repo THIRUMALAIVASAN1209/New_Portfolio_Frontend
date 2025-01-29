@@ -8,9 +8,8 @@ const FormUser = () => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
-  // Function to handle form submission
   const submit = async (event) => {
-    event.preventDefault(); // Prevents the page from refreshing on form submit
+    event.preventDefault();
 
     const userData = { name, email, feedback };
 
@@ -18,13 +17,19 @@ const FormUser = () => {
       const response = await axios.post('https://portfolio-backend-b7s2.onrender.com/users/create', userData);
       setSuccess(response.data.message);
       setError(''); // Clear any previous error messages
+
+      // Clear form inputs
+      setName('');
+      setEmail('');
+      setFeedback('');
+      
     } catch (error) {
       if (error.response) {
         setError(error.response.data.message); // Display backend error message
       } else {
         setError("An unexpected error occurred. Please try again.");
       }
-      setSuccess(''); // Clear any success messages
+      setSuccess(''); // Clears any success messages
     }
   };
 
@@ -59,7 +64,7 @@ const FormUser = () => {
         </div>
         <button style={{ padding: "10px 20px", fontSize: "15px" }} type="submit">Submit</button>
 
-        {/* Display success or error messages */}
+        {/* Displaying success or error messages */}
         {success && <p style={{ color: "green" }}>{success}</p>}
         {error && <p style={{ color: "red" }}>{error}</p>}
       </form>

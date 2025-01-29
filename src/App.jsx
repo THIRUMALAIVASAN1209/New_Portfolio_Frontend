@@ -18,6 +18,12 @@ import Game from './playbackVideos/Game.jsx';
 import Form_user from './Form_user.jsx';
 import Resume from './images/Resume.pdf';
 
+// -------------Achievements--------------
+import image1 from './images/roots.jpg';
+import image2 from './images/solidworks.jpeg'
+import image3 from './images/zoho.jpg'
+import image4 from './images/novitech.png'
+
 
 
 function App() {
@@ -26,11 +32,11 @@ function App() {
   const [isMobile, setIsMobile] = useState(false);
 
   
-  useEffect(() => {      // Detects screen size
+  useEffect(() => {      
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 600);
     };
-    handleResize(); // Check on initial render
+    handleResize(); 
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
@@ -46,7 +52,7 @@ function App() {
   const projects_scroll = (direction) => {
     if (projects_scrollRef.current) {
       const { scrollLeft, clientWidth } = projects_scrollRef.current;
-      const scrollAmount = clientWidth; // Adjust scroll amount as needed
+      const scrollAmount = clientWidth;
       projects_scrollRef.current.scrollTo({
         left: direction === 'right' ? scrollLeft + scrollAmount : scrollLeft - scrollAmount,
         behavior: 'smooth',
@@ -59,15 +65,30 @@ function App() {
   const services_scroll = (direction) => {
     if (services_scrollRef.current) {
       const { scrollLeft, clientWidth } = services_scrollRef.current;
-      const scrollAmount = clientWidth; // Adjust scroll amount as needed
+      const scrollAmount = clientWidth;
       services_scrollRef.current.scrollTo({
         left: direction === 'right' ? scrollLeft + scrollAmount : scrollLeft - scrollAmount,
         behavior: 'smooth',
       });
     }
   };
+
+
+    const achievements_scrollRef = useRef(null);
+
+    const achievements_scroll = (direction) => {
+      if (achievements_scrollRef.current) {
+        const { scrollLeft, clientWidth } = achievements_scrollRef.current;
+        const scrollAmount = clientWidth;
+        achievements_scrollRef.current.scrollTo({
+          left: direction === "right" ? scrollLeft + scrollAmount : scrollLeft - scrollAmount,
+          behavior: "smooth",
+        });
+      }
+    };
   
 
+  
 
   return (
     <>
@@ -83,7 +104,9 @@ function App() {
               <li><a href="#about"><button onClick={closemenu}>About</button></a></li>
               <li><a href="#services"><button onClick={closemenu}>Services</button></a></li>
               <li><a href="#projects"><button onClick={closemenu}>Projects</button></a></li>
+              <li><a href="#achievements"><button onClick={closemenu}>Achievements</button></a></li>
               <li><a href="#contact"><button onClick={closemenu}>Contact</button></a></li>
+              
               <a className='download1 btn2' href={Resume} download onClick={closemenu}>
               <button className='download2'>Download CV</button>
               </a>
@@ -93,7 +116,7 @@ function App() {
           </nav>
           </div>
           
-        {/* </div> */}
+        
         <p className='intro'>Hi, I'm <span className='name'>T</span>hirumalaivasan</p>
         <p className='intro2'><span className='name'>F</span>ull Stack Developer</p>
     </div>
@@ -154,7 +177,7 @@ function App() {
           scrollBehavior: "smooth",
           gap: "16px",
           padding: "10px",
-          width: "100%", // Ensure it spans the viewport
+          width: "100%", 
           boxSizing: "border-box",
         }}>
           <div className="service-item">
@@ -172,33 +195,54 @@ function App() {
           </div>
 
           <div className="service-item">
-            <img src="https://img.icons8.com/Dusk_Wired/512/FFFFFF/solidworks.png" alt="SolidWorks" />
-            <h2>SolidWorks</h2>
+            <img src="https://img.icons8.com/p1em/512w/FFFFFF/sheets.png" alt="SolidWorks" />
+            <h2>MERN Stack</h2>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
             <a href="#" style={{ textDecoration: "underline", color: "wheat" }}>Learn more</a>
           </div>
 
           <div className="service-item">
-            <img src="https://img.icons8.com/Dusk_Wired/512/FFFFFF/solidworks.png" alt="SolidWorks" />
-            <h2>SolidWorks</h2>
+            <img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" alt="SolidWorks"/>
+            <h2>JAVA</h2>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
             <a href="#" style={{ textDecoration: "underline", color: "wheat" }}>Learn more</a>
           </div>
 
           <div className="service-item">
-            <img src="https://img.icons8.com/Dusk_Wired/512/FFFFFF/solidworks.png" alt="SolidWorks" />
-            <h2>SolidWorks</h2>
+            <img src="https://png.pngtree.com/png-clipart/20230609/ourmid/pngtree-logo-html-css-icone-and-png-image_7123436.png" alt="SolidWorks" style={{height:"70px"}}/>
+            <h2>HTML & CSS</h2>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
             <a href="#" style={{ textDecoration: "underline", color: "wheat" }}>Learn more</a>
           </div>
 
           <div className="service-item">
-            <img src="https://img.icons8.com/Dusk_Wired/512/FFFFFF/solidworks.png" alt="SolidWorks" />
-            <h2>SolidWorks</h2>
+          <img src="https://www.freeiconspng.com/uploads/github-icon-9.png" alt="SolidWorks" style={{height:"70px"}}/>
+            <h2>GitHub</h2>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
             <a href="#" style={{ textDecoration: "underline", color: "wheat" }}>Learn more</a>
           </div>
-          {/* Repeat for other services */}
+
+          <div className="service-item">
+            <img src="https://img.icons8.com/?size=512&id=40670&format=png" alt="SolidWorks" />
+            <h2>C language</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <a href="#" style={{ textDecoration: "underline", color: "wheat" }}>Learn more</a>
+          </div>
+
+          <div className="service-item">
+            <img src="https://img.icons8.com/color/512/python.png" alt="SolidWorks" />
+            <h2>Basics of Python</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <a href="#" style={{ textDecoration: "underline", color: "wheat" }}>Learn more</a>
+          </div>
+
+          <div className="service-item">
+            <img src="https://cdn.iconscout.com/icon/free/png-256/free-leetcode-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-company-vol-1-pack-logos-icons-3030025.png" alt="SolidWorks" />
+            <h2>LeetCode</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <a href="#" style={{ textDecoration: "underline", color: "wheat" }}>Learn more</a>
+          </div>
+          
         </div>
       </div>
     </div>
@@ -220,7 +264,7 @@ function App() {
           scrollBehavior: "smooth",
           gap: "16px",
           padding: "10px",
-          width: "100%", // Ensure it spans the viewport
+          width: "100%", 
           boxSizing: "border-box",
         }}>
           <div className="work">
@@ -336,45 +380,67 @@ function App() {
             </div>
           </div>
 
-          <div className="work">
-            <NetflixClone />
-            <div className='layer'>
-              <table>
-                <tbody>
-                  <tr>
-                    <td>
-                      <a style={{ textDecoration: "none", color: "inherit" }} href="https://github.com/THIRUMALAIVASAN1209/Netflix-Clone" target="_blank" rel="noopener noreferrer">
-                        <h3>Netflix Clone</h3>
-                      </a>
-                    </td>
-                    <td>
-                      <a href="https://github.com/THIRUMALAIVASAN1209/Netflix-Clone" target="_blank" rel="noopener noreferrer">
-                        <img src="https://img.icons8.com/ios11/512/FFFFFF/github.png" alt="" style={{ height: "35px", width: "40px", paddingLeft: "10px" }} />
-                      </a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <p>This project is mainly focused on the design of the Netflix Home page by using HTML and CSS</p>
-            </div>
-          </div>
-
         </div>
       </div>
     </div>  
 
-    {/* ---------------My Achievements--------------
+    {/* ---------------My Achievements-------------- */}
 
-    <div className='my-font-class achievements'>
-      <div className='container'>
-        <h1 className='sub-tittle'>My Achievements</h1>
-        <div className="achievement-list">
-          <div className="achievement">
-            <img src="./images/roots.jpg" alt="" />
+    <div className="my-font-class achievements">
+      <div className="achievements">
+        <h1 className="sub-title">My Achievements</h1>
+
+        <div className="scroll-buttons">
+          <button className="slider-button" onClick={() => achievements_scroll("left")}>&lt;</button>
+          <button className="slider-button" onClick={() => achievements_scroll("right")}>&gt;</button>
+        </div>
+
+        <div
+          className="achievements-list"
+          ref={achievements_scrollRef}
+          style={{
+            display: "flex",
+            overflowX: "auto",
+            scrollBehavior: "smooth",
+            gap: "16px",
+            padding: "10px",
+            width: "100%",
+            boxSizing: "border-box",
+          }}
+        >
+          <div className="achievements-item" >
+            <img src={image1} alt="Roots Industries"/>
+            <h3>Roots Industries</h3>
+            <p>Gifted a professional artwork to Roots Industries' director during a motivational event.</p>
+            <a href="#" style={{ textDecoration: "underline", color: "wheat" }}>Learn more</a>
+          </div>
+
+          <div className="achievements-item" >
+            <img src={image2} alt="SolidWorks Certification" />
+            <h3>SolidWorks International Certification</h3>
+            <p>Earned an internationally recognized certification in SolidWorks CAD Design, reflecting my proficiency in 3D modeling and engineering design.</p>
+            <a href="#" style={{ textDecoration: "underline", color: "wheat" }}>Learn more</a>
+          </div>
+
+          <div className="achievements-item">
+            <img src={image3} alt="ZOHO Co-Founder" />
+            <h3>Co-Founder of Zoho Corporation</h3>
+            <p>Presented a personalized artwork to Mr. Sridhar Vembu, Co-Founder of Zoho Corporation, during an entrepreneurship forum at Kongu Engineering College.</p>
+            <a href="#" style={{ textDecoration: "underline", color: "wheat" }}>Learn more</a>
+          </div>
+
+          <div className="achievements-item">
+            <img src={image4} alt="NoviTech Internship"/>
+            <h3>Internship at NoviTech Pvt Ltd</h3>
+            <p>Completed a one-month full-stack development internship, gaining hands-on experience in modern web technologies and application development.</p>
+            <a href="#" style={{ textDecoration: "underline", color: "wheat" }}>Learn more</a>
           </div>
         </div>
       </div>
-    </div> */}
+    </div>
+
+    
+
 
 
     {/* -----------contact----------- */}
